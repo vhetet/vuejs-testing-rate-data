@@ -1,17 +1,12 @@
 const request = require('request');
+const axios = require('axios');
 const fs = require('fs');
 const moment = require('moment')
 
 fetchUsTotalData = () => {
     url = `https://covidtracking.com/api/v1/us/daily.json`;
-    request({
-        method: 'GET',
-        url: url
-    }, (err, res, body) => {
-    
-        if (err) return console.error(err);
-    
-        body = JSON.parse(body)
+    axios.get(url).then(res => {
+        body = res.data
         data = body.map(x => {
             return {
                 dailyTest: x.totalTestResultsIncrease,
@@ -21,9 +16,9 @@ fetchUsTotalData = () => {
             }
         })
         data = data.reverse();
-    
+
         fs.writeFileSync(`data/us/us_covid_test_daily_positive_rate.json`, JSON.stringify(data))
-    });
+    })
 }
 
 module.exports = fetchUsTotalData;

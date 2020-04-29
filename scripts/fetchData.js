@@ -45,7 +45,7 @@ fetchData = (state) => {
         final = dailyTest.map((curr, i) => {return {dailyTest: curr, newDailyCase: dailyPositiveTest[i], dailyPositiveCasePercentage: (dailyPositiveTest[i]/curr) * 100}})
         final.map((f, i) => f['date'] = dates[i])
     
-        fs.writeFileSync(`src/assets/data/us/${state}_covid_test_daily_positive_rate.json`, JSON.stringify(final))
+        fs.writeFileSync(`data/us/${state}_covid_test_daily_positive_rate.json`, JSON.stringify(final))
     });
 }
 

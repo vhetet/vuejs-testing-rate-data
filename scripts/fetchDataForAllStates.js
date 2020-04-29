@@ -1,4 +1,4 @@
-const stateList = require( '../assets/data/state_list.json')
+const stateList = require( '../data/state_list.json')
 const fetchData = require('./fetchData.js')
 const fetchUsTotalData = require('./fetchUsTotalData.js')
 

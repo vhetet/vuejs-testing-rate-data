@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vhetet/vuejs-testing-rate-data#readme",
   "dependencies": {
-    "@fast-csv/parse": "^4.1.2"
+    "@fast-csv/parse": "^4.1.2",
+    "axios": "^0.19.2"
   }
 }

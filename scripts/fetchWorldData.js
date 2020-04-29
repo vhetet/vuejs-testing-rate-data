@@ -1,14 +1,11 @@
-const request = require('request');
+const axios = require('axios')
 const fs = require('fs');
 
 fetchWorldData = () => {
     url = `https://covid.ourworldindata.org/data/owid-covid-data.csv`;
-    request({
-        method: 'GET',
-        url: url
-    }, (err, res, body) => {
-        fs.writeFileSync(`src/assets/data/world_data.csv`, body)
-    });
+    axios.get(url).then(response => {
+        fs.writeFileSync(`data/world_data.csv`, response.data)
+    })
 }
 
 // module.exports = fetchWorldData;

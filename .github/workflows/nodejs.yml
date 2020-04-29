@@ -5,11 +5,13 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: '41 * * * *'
+    - cron: "0 0 * * *"
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,10 +19,9 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: ls -al
-
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: ls -al

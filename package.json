@@ -1,0 +1,22 @@
+{
+  "name": "vuejs-testing-rate-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhetet/vuejs-testing-rate-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhetet/vuejs-testing-rate-data/issues"
+  },
+  "homepage": "https://github.com/vhetet/vuejs-testing-rate-data#readme",
+  "dependencies": {
+    "@fast-csv/parse": "^4.1.2"
+  }
+}

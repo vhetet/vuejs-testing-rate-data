@@ -12,3 +12,15 @@ The scripts are also in here so that the data can be updated. Eventually the pla
 node scripts/fetchDataForAllStates.js
 node scripts/fetchWorldData.js
 ```
+
+### daily update with github actions
+
+I have set up a github action to run the update script daily and push the changes to the repo. This is still a work in progress.
+
+# TODO
+
+* validate that the action is working properly and update it to push to master directly?? 
+* Check why is creates that merge commit? 
+* Check that the cron job is triggered properly. 
+* Remove the trigger on PR once the rest is validated
+* squash all the 'test commit' I used to configure actions?

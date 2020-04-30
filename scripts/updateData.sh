@@ -7,4 +7,3 @@ echo done running the script
 git add .
 git commit -m 'daily update'
 git push -u origin tempBranch
-echo done

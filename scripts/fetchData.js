@@ -8,7 +8,7 @@ fetchData = (state) => {
     }
     url = `https://covidtracking.com/data/state/${state}`;
     axios.get(url).then(res => {
-        let $ = cheerio.load(res);
+        let $ = cheerio.load(res.data);
 
         let dailyTest = [];
 
@@ -17,9 +17,9 @@ fetchData = (state) => {
         });
         dailyTest = dailyTest.reverse()
         dailyTest = dailyTest.slice(1)
-
+        
         let dailyPositiveTest = [];
-
+        
         $('tbody.state-history-table tr td:nth-child(4)').each(function (i, e) {
             dailyPositiveTest[i] = parseFloat($(this).text().replace(/,/g, ''));
         });

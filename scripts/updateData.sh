@@ -1,3 +1,5 @@
+echo git checkout master
+git checkout master
 echo git checkout -B upToDateData
 git checkout -B upToDateData
 echo npm i

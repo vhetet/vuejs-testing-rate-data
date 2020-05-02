@@ -1,4 +1,6 @@
 
+echo git checkout master
+git checkout master
 echo npm i
 npm i
 echo node scripts/fetchDataForAllStates.js

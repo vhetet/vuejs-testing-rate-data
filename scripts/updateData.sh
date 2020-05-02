@@ -1,3 +1,5 @@
+echo git --no-pager branch -a
+git --no-pager branch -a
 echo git --no-pager log --pretty=oneline --max-count=10
 git --no-pager log --pretty=oneline --max-count=10
 echo git branch --show-current

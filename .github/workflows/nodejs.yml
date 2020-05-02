@@ -6,9 +6,6 @@ name: Update data
 on:
   schedule:
     - cron: "0 6 * * *"
-  pull_request:
-    branches:
-      - master
 
 jobs:
   build:

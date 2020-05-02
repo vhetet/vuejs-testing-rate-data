@@ -1,4 +1,5 @@
-
+echo git branch --show-current
+git branch --show-current
 echo git checkout master
 git checkout master
 echo npm i

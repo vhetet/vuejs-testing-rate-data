@@ -1,5 +1,6 @@
 const fs = require('fs');
 const csv = require('@fast-csv/parse');
+const moment = require('moment')
 
 extractWorldData = () => {
     data = {}
@@ -12,13 +13,13 @@ extractWorldData = () => {
                     dailyTest: row[12],
                     newDailyCase: row[4],
                     dailyPositiveCasePercentage: (row[4] / row[12]) * 100,
-                    date: row[2]
+                    date: moment(row[2], 'YYYY-MM-DD').format('ddd MMM D Y')
                 })
             } else {
                 data[row[1]] = []
             }
         })
-        .on('end', rowCount => {
+        .on('end', () => {
 
             Object.keys(data).map(x => {
                 fs.writeFileSync(`data/countries/${x}_covid_test_daily_positive_rate.json`, JSON.stringify(data[x]))

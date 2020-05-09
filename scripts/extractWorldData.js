@@ -12,6 +12,8 @@ extractWorldData = () => {
                 data[row[1]].push({
                     dailyTest: row[12],
                     newDailyCase: row[4],
+                    totalDeath: row[5],
+                    newDailyDeath: row[6],
                     dailyPositiveCasePercentage: (row[4] / row[12]) * 100,
                     date: moment(row[2], 'YYYY-MM-DD').format('ddd MMM D Y')
                 })

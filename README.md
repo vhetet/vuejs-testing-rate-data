@@ -19,8 +19,6 @@ I have set up a github action to run the update script daily and push the change
 
 # TODO
 
-* validate that the action is working properly and update it to push to master directly?? 
-* Check why is creates that merge commit? 
-* Check that the cron job is triggered properly. 
-* Remove the trigger on PR once the rest is validated
-* squash all the 'test commit' I used to configure actions?
+* push to a separate branch do that is does not mess up master and fill up the history?
+* fix the script for the world data
+* rename all those things to make more sense. It's a timy bit confusing

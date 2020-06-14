@@ -8,17 +8,17 @@ extractWorldData = () => {
         .pipe(csv.parse())
         .on('error', error => console.error(error))
         .on('data', row => {
-            if (data[row[1]]) {
-                data[row[1]].push({
-                    dailyTest: row[12],
-                    newDailyCase: row[4],
-                    totalDeath: row[5],
-                    newDailyDeath: row[6],
-                    dailyPositiveCasePercentage: (row[4] / row[12]) * 100,
-                    date: moment(row[2], 'YYYY-MM-DD').format('ddd MMM D Y')
+            if (data[row[2]]) {
+                data[row[2]].push({
+                    dailyTest: row[13],
+                    newDailyCase: row[5],
+                    totalDeath: row[6],
+                    newDailyDeath: row[7],
+                    dailyPositiveCasePercentage: (row[5] / row[13]) * 100,
+                    date: moment(row[3], 'YYYY-MM-DD').format('ddd MMM D Y')
                 })
             } else {
-                data[row[1]] = []
+                data[row[2]] = []
             }
         })
         .on('end', () => {
